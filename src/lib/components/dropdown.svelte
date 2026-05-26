@@ -2,11 +2,11 @@
     import { LucideChevronRight } from "@lucide/svelte";
     import { slide } from "svelte/transition";
     import { expoInOut } from "svelte/easing";
-    import type { Snippet } from "svelte";
+    import type { Component } from "svelte";
 
     interface Props {
         name: string;
-        content: Snippet;
+        content: Component;
     }
 
     let { name = "DefaultName", content }: Props = $props();
@@ -14,6 +14,7 @@
     function handleClick() {
         down = !down;
     }
+    let Content = $derived(content);
 </script>
 
 <div class="ide-block">
@@ -37,7 +38,7 @@
             transition:slide={{ duration: 450, easing: expoInOut }}
         >
             <div class="content-wrapper">
-                {@render content()}
+                <Content />
             </div>
 
             <div class="bracket-close">

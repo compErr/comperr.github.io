@@ -1,39 +1,26 @@
-<script module>
-    export { Contact };
-</script>
-
-<script lang="ts">
-</script>
-
-{#snippet Contact()}
-    <div>
-        <ul class="contact-list">
-            <li>
-                <a href="mailto:josephjitto.k@gmail.com" class="links">
-                    Email (josephjitto.k@gmail.com )
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://github.com/JJKVIT"
-                    target="_blank"
-                    class="links"
-                >
-                    GitHub
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://linkedin.com/in/joseph-jitto-7211b5278"
-                    target="_blank"
-                    class="links"
-                >
-                    LinkedIn
-                </a>
-            </li>
-        </ul>
-    </div>
-{/snippet}
+<div>
+    <ul class="contact-list">
+        <li>
+            <a href="mailto:josephjitto.k@gmail.com" class="links">
+                Email (josephjitto.k@gmail.com )
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/JJKVIT" target="_blank" class="links">
+                GitHub
+            </a>
+        </li>
+        <li>
+            <a
+                href="https://linkedin.com/in/joseph-jitto-7211b5278"
+                target="_blank"
+                class="links"
+            >
+                LinkedIn
+            </a>
+        </li>
+    </ul>
+</div>
 
 <style>
     .contact-list {
