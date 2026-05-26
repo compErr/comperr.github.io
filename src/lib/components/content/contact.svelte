@@ -14,12 +14,19 @@
                 </a>
             </li>
             <li>
-                <a href="https://github.com/JJKVIT" target="_blank">GitHub</a>
+                <a
+                    href="https://github.com/JJKVIT"
+                    target="_blank"
+                    class="links"
+                >
+                    GitHub
+                </a>
             </li>
             <li>
                 <a
-                    href="linkedin.com/in/joseph-jitto-7211b5278"
+                    href="https://linkedin.com/in/joseph-jitto-7211b5278"
                     target="_blank"
+                    class="links"
                 >
                     LinkedIn
                 </a>
@@ -34,9 +41,11 @@
         margin-bottom: 0px;
         padding-left: 15px;
     }
-    li {
+
+    .contact-list li {
         padding-bottom: 5px;
     }
+
     .links {
         color: inherit;
         text-decoration: none;
