@@ -6,6 +6,7 @@
     import favicon from "$lib/assets/favicon.svg";
     import "@fontsource-variable/jetbrains-mono/wght.css";
     let { children } = $props();
+    export const prerender = true;
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>

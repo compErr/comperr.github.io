@@ -1,5 +1,4 @@
 <script module>
-    export { Work };
     const categoryColors = {
         languages: "blue",
         databases: "purple",
@@ -72,13 +71,11 @@
     </div>
 {/snippet}
 
-{#snippet Work()}
-    <div class="experience-container">
-        {#each experience as job}
-            {@render exp(job.title, job.content, job.duration, job.tech)}
-        {/each}
-    </div>
-{/snippet}
+<div class="experience-container">
+    {#each experience as job}
+        {@render exp(job.title, job.content, job.duration, job.tech)}
+    {/each}
+</div>
 
 <style>
     .duration-row {
@@ -87,7 +84,6 @@
         gap: 15px; /* Adds a nice gap between the date and the button */
     }
 
-    /* Update your existing details-toggle class to remove the bottom margin */
     .details-toggle {
         background: none;
         border: none;
@@ -120,13 +116,11 @@
         flex-direction: column;
         gap: 16px;
 
-        /* 1. Badge Aesthetic Cloning Rules */
         color: #565f89;
         background-color: color-mix(in srgb, #565f89 15%, transparent);
         border: 1.5px solid color-mix(in srgb, #565f89 40%, transparent);
-        border-radius: 0.5rem; /* Clean, matching rounded panel aesthetic */
+        border-radius: 0.5rem;
 
-        /* 2. Structured container padding adjustments */
         padding: 20px;
     }
 
