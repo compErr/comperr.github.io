@@ -1,0 +1,11 @@
+[
+  {
+    "title": "AI/ML | Backend Intern",
+    "content": [
+      "Developed and deployed a production-ready machine learning pipeline, researching and integrating optimal Large Language Models (LLMs) to extract actionable market insights from written user reviews.",
+      "Implemented clustering algorithms to categorize unstructured data into hierarchical key drivers and sub-drivers, iteratively refining the system architecture based on cross-functional team feedback.",
+      "Engineered a testing framework by conducting comprehensive unit and functional testing, validating data flow across isolated checkpoints to ensure accuracy and codebase maintainability."],
+    "duration": "May 2026 - June 2026",
+    "tech":{"languages":["Python"],"databases":[],"ai":["vLLM","HuggingFace"],"frameworks":[],"testing":["Unit Testing","Functional Testing"]}
+  }
+]
