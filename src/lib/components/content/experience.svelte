@@ -33,7 +33,7 @@
         <div class="title">
             <span>{Title}</span>
             <div class="duration-row">
-                <p>{Duration}</p>
+                <p class="duration">{Duration}</p>
                 <button
                     class="details-toggle"
                     onclick={() => {
@@ -103,7 +103,7 @@
     .details-toggle:hover {
         color: #c0caf5; /* Highlights to the title color on hover */
     }
-    p {
+    .duration {
         font-style: italic;
         font-size: 15px;
         margin: 0px;
@@ -130,7 +130,6 @@
         padding: 20px;
     }
 
-    /* Individual card item */
     .card {
         margin-bottom: 8px;
     }
@@ -139,14 +138,13 @@
         margin-bottom: 0; /* Clears bottom spacing overflow on the final element */
     }
 
-    /* Keeps Title and Badge perfectly aligned on opposite sides */
     .title {
         display: flex;
-        flex-direction: column; /* 👈 Forces the badge onto the next line */
+        flex-direction: column;
         align-items: flex-start;
         gap: 10px;
         margin-top: 0;
-        margin-bottom: 10px; /* Space between title row and bullet points */
+        margin-bottom: 10px;
         color: #c0caf5;
         font-size: 1.15rem;
         font-weight: 700;

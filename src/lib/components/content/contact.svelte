@@ -9,7 +9,7 @@
     <div>
         <ul class="contact-list">
             <li>
-                <a href="mailto:josephjitto.k@gmail.com">
+                <a href="mailto:josephjitto.k@gmail.com" class="links">
                     Email (josephjitto.k@gmail.com )
                 </a>
             </li>
@@ -37,7 +37,7 @@
     li {
         padding-bottom: 5px;
     }
-    a {
+    .links {
         color: inherit;
         text-decoration: none;
         position: relative;
@@ -45,7 +45,7 @@
         padding-bottom: 0.1rem;
     }
 
-    a::after {
+    .links::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -59,8 +59,8 @@
         transition: transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 
-    a:hover::after,
-    a:focus::after {
+    .links:hover::after,
+    .links:focus::after {
         transform: scaleX(1);
     }
 </style>
