@@ -6,7 +6,7 @@
 
     interface Props {
         name: string;
-        content: Component;
+        content: Component | null;
     }
 
     let { name = "DefaultName", content }: Props = $props();
@@ -38,7 +38,13 @@
             transition:slide={{ duration: 450, easing: expoInOut }}
         >
             <div class="content-wrapper">
-                <Content />
+                {#if content}
+                    <Content />
+                {:else}
+                    <div class="empty-state">
+                        <span class="comment">// 204: No content provided</span>
+                    </div>
+                {/if}
             </div>
 
             <div class="bracket-close">
@@ -49,6 +55,19 @@
 </div>
 
 <style>
+    .empty-state {
+        display: flex;
+        align-items: center;
+        padding: 2px 0;
+    }
+    .comment {
+        color: #565f89;
+        font-style: italic;
+        font-size: 1rem;
+        user-select: none;
+        opacity: 0.8;
+        font-weight: 600;
+    }
     .aqua {
         color: #16b9d7;
     }
