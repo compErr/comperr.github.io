@@ -27,10 +27,19 @@
         frameworks: string[];
         testing: string[];
     },
+    Company: {
+        name: string;
+        link: string;
+    },
 )}
     <div class="card">
         <div class="title">
-            <span>{Title}</span>
+            <span
+                >{Title} @
+                <a href={Company.link} target="_blank" class="links"
+                    >{Company.name}</a
+                ></span
+            >
             <div class="duration-row">
                 <p class="duration">{Duration}</p>
                 <button
@@ -73,7 +82,13 @@
 
 <div class="experience-container">
     {#each experience as job}
-        {@render exp(job.title, job.content, job.duration, job.tech)}
+        {@render exp(
+            job.title,
+            job.content,
+            job.duration,
+            job.tech,
+            job.company,
+        )}
     {/each}
 </div>
 
@@ -83,7 +98,29 @@
         align-items: center; /* Vertically centers the button with the text */
         gap: 15px; /* Adds a nice gap between the date and the button */
     }
-
+    .links {
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.3rem;
+    }
+    .links::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.1rem;
+        background-color: #c0caf5;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    .links:hover::after,
+    .links:focus::after {
+        transform: scaleX(1);
+    }
     .details-toggle {
         background: none;
         border: none;
@@ -95,7 +132,6 @@
         cursor: pointer;
         transition: color 0.2s ease;
     }
-
     .details-toggle:hover {
         color: #c0caf5; /* Highlights to the title color on hover */
     }
