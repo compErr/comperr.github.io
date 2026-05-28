@@ -14,22 +14,28 @@ importers:
       '@lucide/svelte':
         specifier: ^1.3.0
         version: 1.3.0(svelte@5.55.9)
+      xlsx:
+        specifier: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
+        version: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
     devDependencies:
       '@inlang/paraglide-js':
         specifier: ^2.15.2
         version: 2.18.1(typescript@6.0.3)
       '@sveltejs/adapter-auto':
         specifier: ^7.0.1
-        version: 7.0.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13))
+        version: 7.0.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.1)))
       '@sveltejs/adapter-static':
         specifier: ^3.0.10
-        version: 3.0.10(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13))
+        version: 3.0.10(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.1)))
       '@sveltejs/kit':
         specifier: ^2.57.0
-        version: 2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13)
+        version: 2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.1))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^7.0.0
-        version: 7.1.2(svelte@5.55.9)(vite@8.0.13)
+        version: 7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1))
+      '@types/node':
+        specifier: ^25.9.1
+        version: 25.9.1
       svelte:
         specifier: ^5.55.2
         version: 5.55.9
@@ -41,7 +47,7 @@ importers:
         version: 6.0.3
       vite:
         specifier: ^8.0.7
-        version: 8.0.13
+        version: 8.0.13(@types/node@25.9.1)
 
 packages:
 
@@ -267,6 +273,9 @@ packages:
 
   '@types/estree@1.0.9':
     resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
+
+  '@types/node@25.9.1':
+    resolution: {integrity: sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -547,6 +556,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undici-types@7.24.6:
+    resolution: {integrity: sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==}
+
   unplugin@2.3.11:
     resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
     engines: {node: '>=18.12.0'}
@@ -611,6 +623,12 @@ packages:
 
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
+
+  xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz:
+    resolution: {integrity: sha512-oLDq3jw7AcLqKWH2AhCpVTZl8mf6X2YReP+Neh0SJUzV/BdZYjth94tG5toiMB1PPrYtxOCfaoUCkvtuH+3AJA==, tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
+    version: 0.20.3
+    engines: {node: '>=0.8'}
+    hasBin: true
 
   zimmerframe@1.1.4:
     resolution: {integrity: sha512-B58NGBEoc8Y9MWWCQGl/gq9xBCe4IiKM0a2x7GZdQKOW5Exr8S1W24J6OgM1njK8xCRGvAJIL/MxXHf6SkmQKQ==}
@@ -772,19 +790,19 @@ snapshots:
     dependencies:
       acorn: 8.16.0
 
-  '@sveltejs/adapter-auto@7.0.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13))':
+  '@sveltejs/adapter-auto@7.0.1(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.1)))':
     dependencies:
-      '@sveltejs/kit': 2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13)
+      '@sveltejs/kit': 2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.1))
 
-  '@sveltejs/adapter-static@3.0.10(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13))':
+  '@sveltejs/adapter-static@3.0.10(@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.1)))':
     dependencies:
-      '@sveltejs/kit': 2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13)
+      '@sveltejs/kit': 2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.1))
 
-  '@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13)':
+  '@sveltejs/kit@2.60.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.1))':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@sveltejs/acorn-typescript': 1.0.10(acorn@8.16.0)
-      '@sveltejs/vite-plugin-svelte': 7.1.2(svelte@5.55.9)(vite@8.0.13)
+      '@sveltejs/vite-plugin-svelte': 7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1))
       '@types/cookie': 0.6.0
       acorn: 8.16.0
       cookie: 0.6.0
@@ -796,18 +814,18 @@ snapshots:
       set-cookie-parser: 3.1.0
       sirv: 3.0.2
       svelte: 5.55.9
-      vite: 8.0.13
+      vite: 8.0.13(@types/node@25.9.1)
     optionalDependencies:
       typescript: 6.0.3
 
-  '@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13)':
+  '@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.13(@types/node@25.9.1))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.1
       svelte: 5.55.9
-      vite: 8.0.13
-      vitefu: 1.1.3(vite@8.0.13)
+      vite: 8.0.13(@types/node@25.9.1)
+      vitefu: 1.1.3(vite@8.0.13(@types/node@25.9.1))
 
   '@tybys/wasm-util@0.10.2':
     dependencies:
@@ -817,6 +835,10 @@ snapshots:
   '@types/cookie@0.6.0': {}
 
   '@types/estree@1.0.9': {}
+
+  '@types/node@25.9.1':
+    dependencies:
+      undici-types: 7.24.6
 
   '@types/trusted-types@2.0.7': {}
 
@@ -1042,6 +1064,8 @@ snapshots:
 
   typescript@6.0.3: {}
 
+  undici-types@7.24.6: {}
+
   unplugin@2.3.11:
     dependencies:
       '@jridgewell/remapping': 2.3.5
@@ -1053,7 +1077,7 @@ snapshots:
 
   uuid@14.0.0: {}
 
-  vite@8.0.13:
+  vite@8.0.13(@types/node@25.9.1):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -1061,12 +1085,15 @@ snapshots:
       rolldown: 1.0.1
       tinyglobby: 0.2.16
     optionalDependencies:
+      '@types/node': 25.9.1
       fsevents: 2.3.3
 
-  vitefu@1.1.3(vite@8.0.13):
+  vitefu@1.1.3(vite@8.0.13(@types/node@25.9.1)):
     optionalDependencies:
-      vite: 8.0.13
+      vite: 8.0.13(@types/node@25.9.1)
 
   webpack-virtual-modules@0.6.2: {}
+
+  xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz: {}
 
   zimmerframe@1.1.4: {}

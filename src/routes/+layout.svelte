@@ -35,6 +35,7 @@
         scrollbar-gutter: stable;
         scrollbar-color: #565f89 transparent;
         scrollbar-width: thin;
+        overflow-x: hidden;
     }
 
     :global(::-webkit-scrollbar) {
