@@ -58,37 +58,8 @@
 {:else if error}
     <p>{error}</p>
 {:else}
-    <div class="table-wrapper">
-        <div class="metadata">
-            {#each ["Ranking", "Number", "Driver", "Team", "AVG"] as label}
-                <div class="col">
-                    <div class="col-header">{label}</div>
-                    <div class="separator"></div>
-                    <div class="sub-header-spacer"></div>
-                    {#each rows.slice(1) as row, i}
-                        {#if label === "AVG"}
-                            <Badge rating={row[label].toFixed(2) ?? "—"} />
-                        {:else if label === "Number"}
-                            <div class="cell">{row["NO"]}</div>
-                        {:else if label === "Driver"}
-                            <div class="cell">
-                                {row["DRIVER"].split(" ")[1]}
-                            </div>
-                        {:else if label === "Team"}
-                            <div class="cell">{row["TEAM"]}</div>
-                        {:else}
-                            <div class="cell">
-                                {label === "Ranking"
-                                    ? i + 1
-                                    : (row[label] ?? "—")}
-                            </div>
-                        {/if}
-                    {/each}
-                </div>
-            {/each}
-        </div>
-
-        <div class="all-countries">
+    <div class="table">
+        <!-- <div class="all-countries">
             {#each headers as country}
                 {@const isSprint = rows[0][country] === "SQ"}
                 <div class="country-group">
@@ -106,39 +77,79 @@
                     </div>
                 </div>
             {/each}
+        </div> -->
+        <div class="fixed">
+            <div class="cell topgap"></div>
+            <div class="cell topgap"></div>
+            <div class="cell topgap"></div>
+            <div class="cell topgap"></div>
+            <div class="cell topgap"></div>
+            <div class="cell title">RANK</div>
+            <div class="cell title">NO</div>
+            <div class="cell title">DRIVER</div>
+            <div class="cell title">TEAM</div>
+            <div class="cell title">AVG</div>
+            {#each rows.slice(1) as row, i}
+                {@const name = row["DRIVER"].split(" ")}
+                <div class="cell rank">{i + 1}</div>
+                <div class="cell number">
+                    <div class="box">{row["NO"]}</div>
+                </div>
+                <div class="cell driver">{`${name[0][0]}.${name[1]}`}</div>
+                <div class="cell team">
+                    {row["TEAM"] == "Racing Bulls"
+                        ? "VCARB"
+                        : row["TEAM"] == "Aston Martin"
+                          ? "AMR"
+                          : row["TEAM"]}
+                </div>
+                <div class="cell avg"><Badge rating={row["AVG"]}></Badge></div>
+            {/each}
         </div>
+        <div class="points"></div>
     </div>
 {/if}
 
 <style>
-    .table-wrapper {
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0 3vw 0 0;
-        box-sizing: border-box;
-        display: flex;
-        align-items: flex-start;
-        overflow-x: auto;
+    .table {
+        display: grid;
+        grid-template-columns: 0.4fr 1fr;
     }
-
-    .metadata {
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        flex-shrink: 0;
-        margin-right: 24px;
-        position: sticky;
-        left: 0;
-        background-color: #14141a;
-        z-index: 1;
-        padding-right: 16px;
-        padding-left: 3vw;
-        border-right: 1px solid #565f89;
+    .fixed {
+        display: grid;
+        width: 100%;
+        /*grid-template-rows: repeat(10, 1fr);*/
+        grid-template-columns: 0.3fr 0.3fr 1fr 0.7fr 0.4fr;
+        grid-auto-rows: 0.9fr;
+        /*position: sticky;*/
     }
-
-    .col {
+    .title {
+        font-weight: 900;
+    }
+    .box {
+        background-color: red;
+        height: 100%;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.2rem;
+    }
+    .cell {
+        background-color: black;
+        padding: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.1rem;
+    }
+    .number {
+        font-weight: 900;
+    }
+    .team {
+        word-spacing: -7px;
+    }
+    /*.col {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -161,7 +172,7 @@
         align-items: center;
         justify-content: center;
         white-space: nowrap;
-    }
+    }*/
 
     .separator {
         width: 100%;

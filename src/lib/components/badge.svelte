@@ -25,7 +25,6 @@
         rating = null,
         icon: Icon = null,
         extraText = null,
-        style = "normal",
     }: Props = $props();
 
     let dynamicColor = $derived(
