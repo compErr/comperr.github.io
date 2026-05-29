@@ -24,8 +24,8 @@
 
 <style>
     :global(body) {
-        margin-left: 0%;
-        margin-right: 0%;
+        margin-left: 2.82%;
+        margin-right: 2.82%;
         font-family: "JetBrains Mono Variable", monospace;
         background-color: #14141a;
         color: #b7c0e9;
@@ -34,12 +34,11 @@
     :global(html) {
         scrollbar-gutter: stable;
         scrollbar-color: #565f89 transparent;
-        scrollbar-width: thin;
-        overflow-x: hidden;
     }
 
     :global(::-webkit-scrollbar) {
         width: 10px;
+        height: 10px;
     }
 
     :global(::-webkit-scrollbar-track) {
@@ -55,12 +54,5 @@
 
     :global(::-webkit-scrollbar-thumb:hover) {
         background-color: #b477ff;
-    }
-
-    @media (max-width: 768px) {
-        :global(body) {
-            margin-left: 5%;
-            margin-right: 5%;
-        }
     }
 </style>
