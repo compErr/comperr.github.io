@@ -124,7 +124,8 @@
 
                                 {#if !showOnlyAvg || isAvg}
                                     <td class="badge-cell"
-                                        ><Badge rating={row[key]}></Badge></td
+                                        ><Badge rating={row[key].toFixed(2)}
+                                        ></Badge></td
                                     >
                                 {/if}
                             {/each}
