@@ -13,7 +13,7 @@
     interface Props {
         text?: string | number;
         color?: BadgeColor;
-        rating?: number | null; // Pass the raw rating here (0-10)
+        rating?: number | string | null;
         icon?: any;
         extraText?: string | null;
         style?: string | null;
@@ -29,7 +29,9 @@
 
     let dynamicColor = $derived(
         rating !== null
-            ? `hsl(${(Math.min(Math.max(rating, 0), 10) / 10) * 120}, 70%, 50%)`
+            ? !isNaN(Number(rating))
+                ? `hsl(${(Math.min(Math.max(Number(rating), 0), 10) / 10) * 120}, 70%, 50%)`
+                : "#5f6975"
             : colors[color],
     );
 </script>

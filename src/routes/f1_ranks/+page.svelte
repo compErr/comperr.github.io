@@ -123,10 +123,13 @@
                                     !nxtKey || !nxtKey.includes("__EMPTY")}
 
                                 {#if !showOnlyAvg || isAvg}
-                                    <td class="badge-cell"
-                                        ><Badge rating={row[key].toFixed(2)}
-                                        ></Badge></td
-                                    >
+                                    <td class="badge-cell">
+                                        <Badge
+                                            rating={!isNaN(row[key])
+                                                ? row[key].toFixed(2)
+                                                : row[key]}
+                                        ></Badge>
+                                    </td>
                                 {/if}
                             {/each}
                         </tr>
