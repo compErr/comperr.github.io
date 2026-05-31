@@ -29,7 +29,7 @@
 
     let dynamicColor = $derived(
         rating !== null
-            ? !isNaN(Number(rating))
+            ? !isNaN(Number(rating)) && rating != -1
                 ? `hsl(${(Math.min(Math.max(Number(rating), 0), 10) / 10) * 120}, 70%, 50%)`
                 : "#5f6975"
             : colors[color],
@@ -47,7 +47,7 @@
         <Icon size={16} strokeWidth={2.5} />
     {/if}
     <div>
-        <span>{rating != null ? rating : text}</span>
+        <span>{rating != null ? (rating != -1 ? rating : "-") : text}</span>
         {#if extraText}
             <span class="extra">{extraText}</span>
         {/if}
