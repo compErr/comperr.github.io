@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Change to 'master' if that is your default branch
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -20,24 +20,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 1. Install pnpm FIRST
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
 
-      # 2. Setup Node and tell it to cache pnpm instead of npm
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "pnpm"
 
-      # 3. Use pnpm to install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # 4. Use pnpm to build the site
       - name: Build SvelteKit project
         run: pnpm run build
 
