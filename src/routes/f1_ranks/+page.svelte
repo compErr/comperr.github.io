@@ -13,7 +13,7 @@
     let loading = $state(true);
     let error = $state("");
     let showMode = $state(1);
-    let showAll = $state(true);
+    let showAll = $state(false);
     let rowData = $derived(showAll ? rows.slice(1) : rows.slice(1, 11));
 
     onMount(async () => {

@@ -31,7 +31,9 @@
         rating !== null
             ? !isNaN(Number(rating)) && rating != -1
                 ? `hsl(${(Math.min(Math.max(Number(rating), 0), 10) / 10) * 120}, 70%, 50%)`
-                : "#5f6975"
+                : rating == "-"
+                  ? colors["grey"]
+                  : colors["blue"]
             : colors[color],
     );
 </script>
